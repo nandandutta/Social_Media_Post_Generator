@@ -8,6 +8,11 @@ def main():
 
     with tab1:
         occasion = st.text_input("Enter the Prompts (e.g., 'A traditional Bengali Durgapuja pandal with intricate decorations, flowers, and a stunning idol of Goddess Durga.')", key="occasion_tab1")
+        st.markdown('''
+    :red[A] :orange[traditional] :green[Bengali] :blue[Durgapuja] :violet[pandal]
+    :gray[with] :rainbow[intricate] :blue[decorations], :green[flowers], :orange[and]
+    :red[a] :blue[stunning] :green[idol] :violet[of] :orange[Goddess] :red[Durga].
+''')
         company_type = st.selectbox("Select Company Type", ["Tech Startup", "Retail", "Healthcare", "Finance", "Other"], key="company_type_tab1")
         post_type = st.selectbox("Select Post Type", [
             "General Announcement", "Product Launch", "Event Promotion",
