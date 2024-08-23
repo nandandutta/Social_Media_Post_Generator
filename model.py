@@ -52,6 +52,7 @@ def add_watermark(image, watermark_text="Sample Watermark"):
         font = ImageFont.truetype("arial.ttf", font_size)
     except IOError:
         font = ImageFont.load_default()
+        text_width, text_height = font.getsize(watermark_text)
 
     text_width, text_height = draw.textsize(watermark_text, font=font)
     width, height = image.size
