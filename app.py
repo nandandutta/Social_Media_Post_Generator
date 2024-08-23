@@ -7,7 +7,7 @@ def main():
     tab1, tab2 = st.tabs(["Post Generation", "Image Generation(working)"])
 
     with tab1:
-        occasion = st.text_input("Enter the Occasion (e.g., 'Product Launch')", key="occasion_tab1")
+        occasion = st.text_input("Enter the Prompts (e.g., 'A traditional Bengali Durgapuja pandal with intricate decorations, flowers, and a stunning idol of Goddess Durga.')", key="occasion_tab1")
         company_type = st.selectbox("Select Company Type", ["Tech Startup", "Retail", "Healthcare", "Finance", "Other"], key="company_type_tab1")
         post_type = st.selectbox("Select Post Type", [
             "General Announcement", "Product Launch", "Event Promotion",
@@ -19,7 +19,7 @@ def main():
         visual_style = st.selectbox("Select Visual Style", ["Modern and sleek", "Vintage", "Minimalist", "Bold and colorful"], key="visual_style_tab1")
         color_scheme = st.selectbox("Select Color Scheme", ["Tech-themed colors", "Warm colors", "Cool colors", "Custom"], key="color_scheme_tab1")
         mood = st.selectbox("Select Mood/Emotion", ["Excitement", "Professional", "Fun", "Elegant"], key="mood_tab1")
-        watermark_text = st.text_input("Enter Watermark Text", value="Sample Watermark", key="watermark_text_tab1")
+        watermark_text = st.text_input("Enter Company Name", value=" Watermark", key="watermark_text_tab1")
 
         if st.button("Generate Post", key="generate_post_tab1"):
             with st.spinner("Generating content..."):
