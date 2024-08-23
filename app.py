@@ -4,7 +4,7 @@ from model import generate_image_from_text,generate_text_from_prompt,add_waterma
 
 def main():
     st.title("Social Media Post Generator")
-    tab1, tab2 = st.tabs(["Text Generation", "Image Generation"])
+    tab1, tab2 = st.tabs(["Post Generation", "Image Generation(working)"])
 
     with tab1:
         occasion = st.text_input("Enter the Occasion (e.g., 'Product Launch')", key="occasion_tab1")
