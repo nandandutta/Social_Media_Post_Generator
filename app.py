@@ -7,6 +7,12 @@ def main():
     tab1, tab2 = st.tabs(["Post Generation", "Image Generation(working)"])
 
     with tab1:
+        st.markdown("""
+    **Sample Prompts:**
+    1. **Durgapuja Pandal:** A traditional Bengali Durgapuja pandal with intricate decorations, flowers, and a stunning idol of Goddess Durga.
+    2. **Goddess Durga:** Goddess Durga defeating the buffalo-demon Mahishasura, with a fiery explosion in the background.
+    3. **Durgapuja Festival:** A vibrant Durgapuja festival scene with people dressed in traditional attire, enjoying food, music, and dance.
+""")
         occasion = st.text_input("Enter the Prompts (e.g., 'A traditional Bengali Durgapuja pandal with intricate decorations, flowers, and a stunning idol of Goddess Durga.')", key="occasion_tab1")
         st.markdown('''
     :red[A] :orange[traditional] :green[Bengali] :blue[Durgapuja] :violet[pandal]
