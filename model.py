@@ -55,8 +55,11 @@ def add_watermark(image: Image, watermark_text: str) -> Image:
     except OSError:
         font = ImageFont.load_default()
 
-    # Use textsize method to get the text dimensions
-    text_width, text_height = draw.textsize(watermark_text, font=font)
+    # Use textbbox method to get the text dimensions
+    text_bbox = draw.textbbox((0, 0), watermark_text, font=font)
+    text_width = text_bbox[2] - text_bbox[0]
+    text_height = text_bbox[3] - text_bbox[1]
+    
     width, height = image.size
     position = (width - text_width - 10, height - text_height - 10)
     
