@@ -13,7 +13,10 @@ def main():
     2. **Goddess Durga:** Goddess Durga defeating the buffalo-demon Mahishasura, with a fiery explosion in the background.
     3. **Durgapuja Festival:** A vibrant Durgapuja festival scene with people dressed in traditional attire, enjoying food, music, and dance.
 """)
-        occasion = st.text_input("Enter the Prompts (e.g., 'A traditional Bengali Durgapuja pandal with intricate decorations, flowers, and a stunning idol of Goddess Durga.')", key="occasion_tab1")
+
+
+        
+        occasion = st.text_input("Enter the Prompts", key="occasion_tab1")
         st.markdown('''
     :red[A] :orange[traditional] :green[Bengali] :blue[Durgapuja] :violet[pandal]
     :gray[with] :rainbow[intricate] :blue[decorations], :green[flowers], :orange[and]
