@@ -4,7 +4,7 @@ from model import generate_image_from_text,generate_text_from_prompt,add_waterma
 
 def main():
     st.title("Social Media Post Generator")
-    st.title("<font color='#00BFFF'>**Social Media Post Generator**</font>")
+    
     st.markdown("<font color='#FF0000'>**Social**</font> <font color='#00FF00'>**Media**</font> <font color='#000000'>**Post**</font> <font color='#0000FF'>**Generator**</font>")
     tab1, tab2 = st.tabs(["Post Generation", "Video Generation(working on....)"])
 
