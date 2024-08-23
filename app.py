@@ -4,7 +4,7 @@ from model import generate_image_from_text,generate_text_from_prompt,add_waterma
 
 def main():
     st.title("Social Media Post Generator")
-    tab1, tab2 = st.tabs(["Post Generation", "Image Generation(working)"])
+    tab1, tab2 = st.tabs(["Post Generation", "Video Generation(working on....)"])
 
     with tab1:
         st.markdown("""
