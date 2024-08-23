@@ -50,11 +50,10 @@ def add_watermark(image, watermark_text="Sample Watermark"):
     font_size = 50
     try:
         font = ImageFont.truetype("arial.ttf", font_size)
-    except IOError:
+    except OSError:
         font = ImageFont.load_default()
-        text_width, text_height = font.getsize(watermark_text)
 
-    text_width, text_height = draw.textsize(watermark_text, font=font)
+    text_width, text_height = font.getsize(watermark_text)
     width, height = image.size
     position = (width - text_width - 10, height - text_height - 10)
 
