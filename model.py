@@ -45,17 +45,20 @@ def generate_text_from_prompt(prompt, context):
         return None
 
 # Function to add a watermark text on the generated image
-def add_watermark(image, watermark_text="Sample Watermark"):
+def add_watermark(image: Image, watermark_text: str) -> Image:
     draw = ImageDraw.Draw(image)
     font_size = 50
+
     try:
+        # Adjust the path to the font file as needed
         font = ImageFont.truetype("arial.ttf", font_size)
     except OSError:
         font = ImageFont.load_default()
 
-    text_width, text_height = font.getsize(watermark_text)
+    # Use textsize method to get the text dimensions
+    text_width, text_height = draw.textsize(watermark_text, font=font)
     width, height = image.size
     position = (width - text_width - 10, height - text_height - 10)
-
+    
     draw.text(position, watermark_text, font=font, fill=(255, 255, 255, 128))
     return image
