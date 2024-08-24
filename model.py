@@ -67,7 +67,7 @@ def add_watermark(image: Image, watermark_text: str, font_size: int = 100) -> Im
     text_height = text_bbox[3] - text_bbox[1]
     
     width, height = image.size
-    position = (width - text_width - 5, height - text_height - 5)
+    position = (width - text_width - 10, height - text_height - 10)
     
     draw.text(position, watermark_text, font=font, fill=(255, 255, 255, 128))
     return image
