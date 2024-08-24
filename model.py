@@ -11,7 +11,7 @@ load_dotenv()
 def generate_image_from_text(prompt):
     API_URL = "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-dev"
     #API_KEY = os.getenv('HUGGINGFACE_API_KEY')
-    headers = {"Authorization": "Bearer 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"}
+    headers = {"Authorization": "Bearer hf_q"}
 
     def query(payload):
         response = requests.post(API_URL, headers=headers, json=payload)
@@ -33,7 +33,7 @@ def generate_image_from_text(prompt):
 def generate_text_from_prompt(prompt, context):
     API_URL = "https://api-inference.huggingface.co/models/meta-llama/Meta-Llama-3.1-8B-Instruct"
     #API_KEY = os.getenv('HUGGINGFACE_API_KEY')
-    headers = {"Authorization": "Bearer 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"}
+    headers = {"Authorization": "Bearer hf_qXYanME"}
 
     try:
         combined_prompt = f"{prompt} {context}" if context else prompt
