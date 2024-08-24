@@ -1,0 +1,54 @@
+name: Generate Text and Image
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'  # Specify your Python version here
+
+    - name: Install dependencies
+      run: |
+        python -m venv venv
+        source venv/bin/activate
+        pip install -r requirements.txt
+
+    - name: Generate Text from Prompt
+      env:
+        HUGGINGFACE_API_KEY: ${{ secrets.HUGGINGFACE_API_KEY }}
+      run: |
+        source venv/bin/activate
+        python -c "
+        from model import generate_text_from_prompt;
+        result = generate_text_from_prompt('Generate a summary of this text.', '');
+        print(result)
+        "
+
+    - name: Generate Image from Text
+      env:
+        HUGGINGFACE_API_KEY: ${{ secrets.HUGGINGFACE_API_KEY }}
+      run: |
+        source venv/bin/activate
+        python -c "
+        from model import generate_image_from_text;
+        image = generate_image_from_text('Generate an image of a forest at sunset.');
+        image.save('output_image.png')
+        "
+
+    - name: Upload Image Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: generated-image
+        path: output_image.png
