@@ -2,6 +2,10 @@ from PIL import Image, ImageDraw, ImageFont, ImageOps
 import requests
 import io
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 API_KEY = os.getenv('HUGGINGFACE_API_KEY')
 # Function to generate an image from text using the FLUX model
 def generate_image_from_text(prompt):
