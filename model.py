@@ -54,7 +54,7 @@ def generate_text_from_prompt(prompt, context):
 # Function to add a watermark text on the generated image
 def add_watermark(image: Image, watermark_text: str) -> Image:
     draw = ImageDraw.Draw(image)
-    font_size = 250
+    font_size = 2500
 
     try:
         # Adjust the path to the font file as needed
@@ -68,7 +68,7 @@ def add_watermark(image: Image, watermark_text: str) -> Image:
     text_height = text_bbox[3] - text_bbox[1]
     
     width, height = image.size
-    position = (width - text_width - 50, height - text_height - 50)
+    position = (width - text_width - 5, height - text_height - 5)
     
     draw.text(position, watermark_text, font=font, fill=(255, 255, 255, 128))
     return image
