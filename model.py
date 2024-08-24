@@ -6,6 +6,7 @@ API_KEY = os.getenv('HUGGINGFACE_API_KEY')
 # Function to generate an image from text using the FLUX model
 def generate_image_from_text(prompt):
     API_URL = "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-dev"
+    API_KEY = os.getenv('HUGGINGFACE_API_KEY')
     headers = {"Authorization": f"Bearer {API_KEY}"}
 
     def query(payload):
@@ -27,6 +28,7 @@ def generate_image_from_text(prompt):
 # Function to generate text using the Meta LLaMA 3.1 model via API
 def generate_text_from_prompt(prompt, context):
     API_URL = "https://api-inference.huggingface.co/models/meta-llama/Meta-Llama-3.1-8B-Instruct"
+    API_KEY = os.getenv('HUGGINGFACE_API_KEY')
     headers = {"Authorization": f"Bearer {API_KEY}"}
 
     try:
